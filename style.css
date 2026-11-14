@@ -1,0 +1,1598 @@
+/* =====================================================
+   MADELYN FASHION
+   SHARED WEBSITE STYLESHEET
+   Luxury | Editorial | Minimal | Elegant
+   Refined Layout | Champagne Side-Framed Website
+===================================================== */
+
+/* =====================================================
+   01. BRAND VARIABLES
+===================================================== */
+
+:root {
+  --wine: #762d3b;
+  --wine-dark: #57202c;
+  --wine-light: #914b58;
+
+  --ivory: #f7f3ed;
+  --cream: #ede5da;
+  --muted: #77716f;
+
+  --charcoal: #292524;
+  --white: #ffffff;
+
+  --border: #e5ddd4;
+
+  /* Gold framing */
+  --frame-color: #c6a77b;
+  --outer-margin-color: #c6a77b;
+  --champagne: #c6a77b;
+
+  /* Typography */
+  --heading-font: "Playfair Display", Georgia, serif;
+  --body-font: "DM Sans", Arial, sans-serif;
+
+  /* Layout */
+  --container: 1200px;
+  --section-space: 100px;
+
+  /* Side frame dimensions */
+  --frame-width: 0.5px;
+  --frame-margin: clamp(5px, 1.5vw, 10px);
+
+  /* Image spacing */
+  --image-inset: 12px;
+
+  /* Effects */
+  --transition: 0.3s ease;
+  --shadow: 0 12px 35px rgba(41, 37, 36, 0.08);
+}
+
+/* =====================================================
+   02. RESET AND GLOBAL STYLES
+===================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+  overflow-x: clip;
+
+  /* Independent outer side margins */
+  background-color: var(--ivory);
+
+  background-image: linear-gradient(
+    to right,
+    var(--outer-margin-color) 0,
+    var(--outer-margin-color) var(--frame-margin),
+    transparent var(--frame-margin),
+    transparent calc(100% - var(--frame-margin)),
+    var(--outer-margin-color) calc(100% - var(--frame-margin)),
+    var(--outer-margin-color) 100%
+  );
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll;
+}
+
+body {
+  position: relative;
+  width: auto;
+  min-height: 100vh;
+
+  margin-left: var(--frame-margin);
+  margin-right: var(--frame-margin);
+
+  /* Thin champagne vertical lines */
+  border-left: var(--frame-width) solid var(--frame-color);
+  border-right: var(--frame-width) solid var(--frame-color);
+
+  font-family: var(--body-font);
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: var(--charcoal);
+  background: var(--ivory);
+
+  overflow-x: clip;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  position: relative;
+}
+
+.container {
+  width: min(90%, var(--container));
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: var(--section-space);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* =====================================================
+   03. TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--charcoal);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+}
+
+h2 {
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: var(--muted, #77716f);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  max-width: 750px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin-bottom: 18px;
+  color: var(--champagne, #c6a77b);
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.brand-intro,
+.brand-introduction {
+  max-width: 100%;
+  text-align: center;
+}
+
+.brand-intro h2,
+.brand-introduction h2 {
+  margin-bottom: 22px;
+}
+
+.brand-intro p,
+.brand-introduction p {
+  max-width: 750px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+
+.section-content,
+.course-card,
+.enquiry-intro {
+  text-align: left;
+}
+
+/* =====================================================
+   04. BUTTONS
+===================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  padding: 12px 28px;
+
+  color: var(--white);
+  background: var(--wine);
+
+  border: 1px solid var(--wine);
+  border-radius: 2px;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transition: var(--transition);
+}
+
+.btn:hover {
+  color: var(--white);
+  background: var(--wine-dark);
+  border-color: var(--wine-dark);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  color: var(--wine);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  color: var(--white);
+  background: var(--wine);
+}
+
+.btn-light {
+  color: var(--wine);
+  background: var(--ivory);
+  border-color: var(--ivory);
+}
+
+.btn-light:hover {
+  color: var(--wine-dark);
+  background: var(--cream);
+  border-color: var(--cream);
+}
+
+.section-cta {
+  margin-top: 35px;
+}
+
+.centered-actions,
+.hero-buttons,
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* =====================================================
+   05. HEADER AND BRAND IDENTITY
+===================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(247, 243, 237, 0.97);
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.main-navigation {
+  position: relative;
+
+  width: min(94%, 1350px);
+  min-height: 100px;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Brand logo container */
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brand-logos img {
+  width: 100px;
+  max-height: 65px;
+  object-fit: contain;
+}
+
+/* MADELYN brand name */
+
+.brand-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--wine);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.brand-logos:hover .brand-name {
+  color: var(--champagne);
+}
+
+.brand-logos:hover .brand-name {
+  color: var(--champagne);
+}
+
+/* =====================================================
+   06. DESKTOP NAVIGATION
+===================================================== */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+
+  margin-left: auto;
+}
+
+.nav-menu > li {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-menu > li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding-block: 12px;
+
+  color: var(--charcoal);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition: var(--transition);
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a:focus-visible,
+.nav-menu > li > a[aria-current="page"] {
+  color: var(--wine);
+}
+
+/* Desktop dropdown */
+
+.nav-menu .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 230px;
+  padding-block: 12px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(10px);
+  transition: var(--transition);
+}
+
+.nav-menu .has-dropdown:hover > .dropdown,
+.nav-menu .has-dropdown:focus-within > .dropdown,
+.nav-menu .has-dropdown.open > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-menu .dropdown li {
+  width: 100%;
+}
+
+.nav-menu .dropdown a {
+  display: block;
+  padding: 10px 20px;
+
+  color: var(--charcoal);
+  font-size: 0.82rem;
+
+  transition: var(--transition);
+}
+
+.nav-menu .dropdown a:hover,
+.nav-menu .dropdown a:focus-visible {
+  color: var(--wine);
+  background: var(--ivory);
+}
+
+/* Hamburger button */
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+
+  color: var(--wine);
+  background: transparent;
+
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+
+  background: var(--wine);
+  transition: var(--transition);
+}
+
+/* =====================================================
+   07. HERO SECTIONS
+===================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(rgba(41, 37, 36, 0.58), rgba(41, 37, 36, 0.58));
+
+  z-index: 1;
+}
+
+.hero-section img.hero-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(90%, 900px);
+  margin-inline: auto;
+  padding-block: 100px;
+
+  text-align: center;
+}
+
+.hero-content h1 {
+  margin-bottom: 25px;
+  color: var(--white);
+}
+
+.hero-content h1 span {
+  display: block;
+}
+
+.hero-content p {
+  max-width: 680px;
+  margin: 0 auto 30px;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.02rem;
+  text-align: center;
+}
+
+.hero-content .eyebrow {
+  color: var(--champagne);
+}
+
+.page-hero {
+  min-height: 420px;
+}
+
+.page-hero .hero-content {
+  padding-block: 75px;
+}
+
+/* =====================================================
+   08. INTRODUCTION AND BRAND SECTIONS
+===================================================== */
+
+.academy-section,
+.apparel-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 65px;
+}
+
+.section-image {
+  width: calc(100% - (var(--image-inset) * 2));
+  height: 450px;
+  min-height: 450px;
+
+  margin-inline: auto;
+
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.section-image:hover img {
+  transform: scale(1.04);
+}
+
+.section-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.section-content h2 {
+  margin-bottom: 22px;
+}
+
+.section-content p {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.section-content .btn {
+  margin-top: 12px;
+}
+
+/* Academy and Apparel text refinement */
+
+.academy-section .section-content,
+.apparel-section .section-content {
+  max-width: 600px;
+}
+
+.academy-section .section-content h2,
+.apparel-section .section-content h2 {
+  color: var(--wine);
+}
+
+.academy-section .section-content .eyebrow,
+.apparel-section .section-content .eyebrow {
+  color: var(--wine);
+}
+
+/* Text links */
+
+.text-link {
+  display: inline-block;
+  position: relative;
+
+  padding-bottom: 5px;
+
+  color: var(--wine);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+
+  transition: color var(--transition);
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--champagne);
+
+  transform: scaleX(1);
+  transform-origin: left;
+
+  transition: transform var(--transition);
+}
+
+.text-link:hover {
+  color: var(--wine-dark);
+}
+
+.text-link:hover::after {
+  transform: scaleX(0.65);
+}
+
+/* =====================================================
+   09. COURSE CARDS
+===================================================== */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.course-card {
+  min-width: 0;
+  padding: 35px 30px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+
+  transition: var(--transition);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--champagne);
+  box-shadow: var(--shadow);
+}
+
+.course-number {
+  display: inline-block;
+  margin-bottom: 15px;
+
+  color: var(--champagne);
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+}
+
+.course-card h3 {
+  margin-bottom: 15px;
+  color: var(--wine);
+}
+
+.course-card p {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.course-card ul {
+  display: grid;
+  gap: 12px;
+}
+
+.course-card li {
+  position: relative;
+  padding-left: 22px;
+
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.course-card li::before {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--wine);
+}
+
+/* =====================================================
+   10. STUDENT PROJECTS AND GALLERIES
+===================================================== */
+
+.student-work-section,
+.bridal-gallery-section {
+  background: var(--cream);
+}
+
+.project-gallery,
+.bridal-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-item {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.project-item img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.project-item:hover img {
+  transform: scale(1.05);
+}
+
+.project-item figcaption,
+.project-caption {
+  padding: 20px;
+  color: var(--charcoal);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.project-caption h3 {
+  margin-bottom: 7px;
+  font-size: 1.2rem;
+}
+
+.project-caption p {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Gallery preview link */
+
+.gallery-link {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   11. BRIDAL FEATURE
+===================================================== */
+
+.bridal-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 60px;
+}
+
+.bridal-feature-image {
+  width: calc(100% - (var(--image-inset) * 2));
+  height: 500px;
+  min-height: 500px;
+
+  margin-inline: auto;
+
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.bridal-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bridal-feature-content h2 {
+  margin-bottom: 20px;
+}
+
+.bridal-feature-content p {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* =====================================================
+   12. ENQUIRY SECTIONS AND FORMS
+===================================================== */
+
+.enquiry-section,
+.bridal-enquiry-section {
+  background: var(--wine-dark);
+  color: var(--white);
+}
+
+.enquiry-container {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+  gap: 65px;
+}
+
+.enquiry-intro h2 {
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.enquiry-intro p {
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.76);
+  text-align: left;
+}
+
+.enquiry-intro .eyebrow {
+  color: var(--champagne);
+}
+
+.enquiry-form {
+  min-width: 0;
+  padding: 40px;
+
+  background: var(--ivory);
+  color: var(--charcoal);
+}
+
+.enquiry-form h3 {
+  margin-bottom: 25px;
+  color: var(--wine);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  min-width: 0;
+  margin-bottom: 20px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--charcoal);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+
+  color: var(--charcoal);
+  background: var(--white);
+
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  outline: none;
+
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--wine);
+  box-shadow: 0 0 0 3px rgba(118, 45, 59, 0.08);
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.enquiry-form .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* =====================================================
+   13. CONTACT SECTION
+===================================================== */
+
+.contact-section {
+  background: var(--cream);
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+/* Contact buttons in homepage introduction */
+
+.contact-actions {
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* =====================================================
+   14. FOOTER
+===================================================== */
+
+.site-footer {
+  padding: 75px 0 25px;
+  background: #211c1d;
+  color: var(--white);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  align-items: start;
+  gap: 50px;
+
+  width: min(90%, var(--container));
+  margin-inline: auto;
+  padding-bottom: 45px;
+}
+
+/* Footer logos */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-width: 0;
+}
+
+.footer-brand img {
+  width: 120px;
+  max-height: 70px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.footer-brand p {
+  max-width: 330px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: left;
+}
+
+.footer-column h3 {
+  margin-bottom: 20px;
+
+  color: var(--white);
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-column ul,
+.footer-content nav ul {
+  display: grid;
+  gap: 12px;
+}
+
+.footer-column a,
+.footer-content nav a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.86rem;
+  transition: var(--transition);
+}
+
+.footer-column a:hover,
+.footer-content nav a:hover {
+  color: var(--champagne);
+}
+
+.footer-content > p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.86rem;
+  text-align: left;
+}
+
+.copyright {
+  width: min(90%, var(--container));
+  margin-inline: auto;
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* =====================================================
+   15. BACK TO TOP
+===================================================== */
+
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 999;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--white);
+  background: var(--wine);
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 1.3rem;
+  box-shadow: var(--shadow);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(10px);
+  transition: var(--transition);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  color: var(--white);
+  background: var(--wine-dark);
+}
+
+/* =====================================================
+   16. TABLET AND COMPACT DESKTOP
+===================================================== */
+
+@media (max-width: 1050px) {
+  :root {
+    --section-space: 80px;
+    --image-inset: 9px;
+  }
+
+  .main-navigation {
+    gap: 18px;
+  }
+
+  .brand-logos {
+    gap: 10px;
+  }
+
+  .brand-logos img {
+    width: 76px;
+  }
+
+  .brand-name {
+    font-size: 1.35rem;
+    letter-spacing: 0.14em;
+    margin-left: 4px;
+  }
+
+  .nav-menu {
+    gap: 18px;
+  }
+
+  .nav-menu > li > a {
+    font-size: 0.74rem;
+  }
+
+  .academy-section,
+  .apparel-section,
+  .bridal-feature {
+    gap: 35px;
+  }
+
+  .section-image {
+    height: 420px;
+    min-height: 420px;
+  }
+
+  .bridal-feature-image {
+    height: 460px;
+    min-height: 460px;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .enquiry-container {
+    gap: 35px;
+  }
+
+  .enquiry-form {
+    padding: 35px;
+  }
+}
+
+/* =====================================================
+   17. MOBILE NAVIGATION AND TABLET LAYOUT
+===================================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --section-space: 70px;
+    --image-inset: 7px;
+  }
+
+  html {
+    scroll-padding-top: 85px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  /* Header */
+
+  .main-navigation {
+    width: 90%;
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .brand-logos {
+    gap: 7px;
+  }
+
+  .brand-logos img {
+    width: 58px;
+    max-height: 48px;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+    margin-left: 4px;
+  }
+
+  /* Hamburger */
+
+  .menu-toggle {
+    display: flex;
+    flex-shrink: 0;
+    margin-left: auto;
+    z-index: 1002;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Main mobile dropdown */
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+
+    width: 100%;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+
+    margin: 0;
+    padding: 12px 0;
+
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 30px rgba(41, 37, 36, 0.12);
+
+    z-index: 1001;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu > li {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .nav-menu > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 14px 22px;
+
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-menu > li:last-child > a {
+    border-bottom: none;
+  }
+
+  /* Nested mobile dropdowns */
+
+  .nav-menu .dropdown {
+    position: static;
+
+    display: none;
+    width: 100%;
+    min-width: 100%;
+
+    padding: 5px 0;
+
+    background: var(--cream);
+    border: none;
+    box-shadow: none;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-menu .has-dropdown.open > .dropdown {
+    display: block;
+  }
+
+  .nav-menu .dropdown a {
+    display: block;
+    padding: 12px 35px;
+
+    color: var(--muted);
+    font-size: 0.84rem;
+
+    border-bottom: 1px solid rgba(118, 45, 59, 0.08);
+  }
+
+  .nav-menu .dropdown li:last-child a {
+    border-bottom: none;
+  }
+
+  /* Hero */
+
+  .hero-section {
+    min-height: 560px;
+  }
+
+  .page-hero {
+    min-height: 360px;
+  }
+
+  .hero-content {
+    padding-block: 75px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Main content */
+
+  .academy-section,
+  .apparel-section,
+  .bridal-feature,
+  .enquiry-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .section-image {
+    height: 350px;
+    min-height: 350px;
+  }
+
+  .section-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .bridal-feature-image {
+    height: 400px;
+    min-height: 400px;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery,
+  .bridal-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-item img {
+    height: 280px;
+  }
+
+  /* Footer layout */
+
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    align-items: center;
+    justify-content: start;
+    column-gap: 25px;
+    row-gap: 12px;
+  }
+
+  .footer-brand img {
+    width: 100px;
+    max-width: 100%;
+    max-height: 65px;
+    margin-bottom: 0;
+    object-fit: contain;
+  }
+
+  .footer-brand p {
+    grid-column: 1 / -1;
+    max-width: 400px;
+    margin-top: 8px;
+  }
+
+  .enquiry-form {
+    padding: 35px;
+  }
+}
+
+/* =====================================================
+   18. SMALL MOBILE SCREENS
+===================================================== */
+
+@media (max-width: 480px) {
+  :root {
+    --section-space: 60px;
+    --image-inset: 5px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .main-navigation {
+    width: 94%;
+    min-height: 72px;
+    gap: 8px;
+  }
+
+  .brand-logos {
+    gap: 5px;
+  }
+
+  .brand-logos img {
+    width: 45px;
+    max-height: 42px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    margin-left: 3px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-menu {
+    max-height: calc(100vh - 82px);
+  }
+
+  .nav-menu > li > a {
+    padding: 13px 18px;
+    font-size: 0.85rem;
+  }
+
+  .nav-menu .dropdown a {
+    padding: 11px 30px;
+    font-size: 0.82rem;
+  }
+
+  h1 {
+    font-size: 2.55rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero-section {
+    min-height: 520px;
+  }
+
+  .hero-buttons,
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn,
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .section-image {
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .bridal-feature-image {
+    height: 350px;
+    min-height: 350px;
+  }
+
+  .project-gallery,
+  .bridal-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item img {
+    height: 340px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .enquiry-form {
+    padding: 25px 18px;
+  }
+
+  /* Footer */
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    justify-content: start;
+    column-gap: 18px;
+    row-gap: 10px;
+  }
+
+  .footer-brand img {
+    width: 85px;
+    max-height: 58px;
+    margin-bottom: 0;
+  }
+
+  .footer-brand p {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+
+  .back-to-top {
+    right: 15px;
+    bottom: 15px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =====================================================
+   19. ACCESSIBILITY AND REDUCED MOTION
+===================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

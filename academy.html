@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Explore Madelyn Fashion Academy's beginner, intermediate and advanced sewing and fashion design programmes." />
+
+    <title>Fashion Academy | Madelyn</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="main-navigation" aria-label="Main navigation">
+        <a href="index.html" class="brand-logos" aria-label="Madelyn homepage">
+          <img
+            src="images/madelyn_academy_logo.jpg"
+            alt="Madelyn Fashion Academy logo" />
+          <img
+            src="images/madelyn_apparel_logo.jpg"
+            alt="Madelyn Apparel logo" />
+
+          <span class="brand-name">MADELYN</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="primary-menu">
+          <li><a href="index.html">Home</a></li>
+
+          <li class="has-dropdown">
+            <a href="academy.html" aria-current="page">The Academy</a>
+            <ul class="dropdown">
+              <li><a href="#courses">Our Courses</a></li>
+              <li><a href="#student-work">Student Projects</a></li>
+              <li><a href="#academy-enquiry">Enquiries</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="apparel.html">Madelyn Apparel</a>
+            <ul class="dropdown">
+              <li>
+                <a href="apparel.html#bridal-gallery">Bridal Collection</a>
+              </li>
+              <li>
+                <a href="apparel.html#bridal-enquiry">Bridal Enquiries</a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ACADEMY HERO -->
+      <section class="hero-section" aria-labelledby="academy-hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Madelyn Fashion Academy</p>
+
+          <h1 id="academy-hero-title">
+            Discover the Art of
+            <span>Fashion Design.</span>
+          </h1>
+
+          <p>
+            Learn the skills, develop your creativity and turn your passion for
+            fashion into practical ability.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary"> Explore Our Courses </a>
+
+            <a href="#academy-enquiry" class="btn btn-secondary">
+              Enquire Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT THE ACADEMY -->
+      <section
+        class="brand-introduction section-padding"
+        aria-labelledby="about-academy-title">
+        <header class="section-heading">
+          <p class="eyebrow">Learn. Create. Become.</p>
+
+          <h2 id="about-academy-title">Welcome to Madelyn Fashion Academy</h2>
+
+          <p>
+            Our academy is committed to helping aspiring fashion designers
+            develop practical skills through structured instruction, creative
+            exploration and hands-on learning. Whether you are just starting or
+            looking to refine your abilities, there is a learning path for you.
+          </p>
+        </header>
+      </section>
+
+      <!-- TRAINING LEVELS -->
+      <section
+        class="courses-section section-padding"
+        id="courses"
+        aria-labelledby="courses-title">
+        <header class="section-heading">
+          <p class="eyebrow">Your Creative Journey</p>
+
+          <h2 id="courses-title">Our Training Levels</h2>
+
+          <p>
+            Our programmes are structured to support students at different
+            stages of their fashion design journey.
+          </p>
+        </header>
+
+        <div class="course-grid">
+          <article class="course-card">
+            <h3>Beginner Level</h3>
+
+            <p>Build a strong foundation in sewing and fashion design.</p>
+
+            <ul>
+              <li>Introduction to sewing tools</li>
+              <li>Fabric identification</li>
+              <li>Basic hand stitching</li>
+              <li>Introduction to machine sewing</li>
+              <li>Basic garment construction</li>
+              <li>Simple clothing projects</li>
+            </ul>
+          </article>
+
+          <article class="course-card">
+            <h3>Intermediate Level</h3>
+
+            <p>
+              Strengthen your skills and develop your garment construction
+              techniques.
+            </p>
+
+            <ul>
+              <li>Body measurements</li>
+              <li>Pattern drafting</li>
+              <li>Skirt construction</li>
+              <li>Trouser construction</li>
+              <li>Blouse and dress making</li>
+              <li>Garment finishing techniques</li>
+            </ul>
+          </article>
+
+          <article class="course-card">
+            <h3>Advanced Level</h3>
+
+            <p>
+              Explore professional techniques and more complex fashion designs.
+            </p>
+
+            <ul>
+              <li>Advanced pattern drafting</li>
+              <li>Structured garment construction</li>
+              <li>Evening wear</li>
+              <li>Advanced finishing techniques</li>
+              <li>Bridal design fundamentals</li>
+              <li>Professional design projects</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- STUDENT WORK -->
+      <section
+        class="student-work-section section-padding"
+        id="student-work"
+        aria-labelledby="student-work-title">
+        <header class="section-heading">
+          <p class="eyebrow">Made by Our Students</p>
+
+          <h2 id="student-work-title">Learning Through Creativity</h2>
+
+          <p>
+            A showcase of classwork, practical exercises and creative projects
+            completed by our students.
+          </p>
+        </header>
+
+        <div class="project-gallery">
+          <figure class="project-item">
+            <img
+              src="images/student-1.jpg"
+              alt="Fashion design project by a student"
+              loading="lazy" />
+            <figcaption>Student Design Project</figcaption>
+          </figure>
+
+          <figure class="project-item">
+            <img
+              src="images/student-2.jpg"
+              alt="Student practising garment construction"
+              loading="lazy" />
+            <figcaption>Garment Construction</figcaption>
+          </figure>
+
+          <figure class="project-item">
+            <img
+              src="images/student-3.jpg"
+              alt="Completed sewing project by a student"
+              loading="lazy" />
+            <figcaption>Creative Classwork</figcaption>
+          </figure>
+        </div>
+
+        <div class="section-heading" style="margin-top: 35px; margin-bottom: 0">
+          <a href="gallery.html" class="text-link"> Explore More Projects </a>
+        </div>
+      </section>
+
+      <!-- ACADEMY ENQUIRY -->
+      <section
+        class="enquiry-section section-padding"
+        id="academy-enquiry"
+        aria-labelledby="academy-enquiry-title">
+        <header class="section-heading">
+          <p class="eyebrow">Start Your Journey</p>
+
+          <h2 id="academy-enquiry-title">Enquire About Our Training</h2>
+
+          <p>
+            Interested in joining Madelyn Fashion Academy? Complete the form
+            below and send us your enquiry.
+          </p>
+        </header>
+
+        <form class="enquiry-form" id="academyForm">
+          <div class="form-group">
+            <label for="academy-name">Full Name</label>
+            <input
+              type="text"
+              id="academy-name"
+              name="name"
+              autocomplete="name"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="academy-email">Email Address</label>
+            <input
+              type="email"
+              id="academy-email"
+              name="email"
+              autocomplete="email"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="academy-phone">Phone Number</label>
+            <input
+              type="tel"
+              id="academy-phone"
+              name="phone"
+              autocomplete="tel"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="academy-course">Preferred Training Level</label>
+
+            <select id="academy-course" name="course" required>
+              <option value="">Select a level</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="academy-message">Additional Information</label>
+
+            <textarea
+              id="academy-message"
+              name="message"
+              rows="5"
+              placeholder="Tell us a little about your learning goals..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Send Academy Enquiry
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img
+              src="images/madelyn_academy_logo.jpg"
+              alt="Madelyn Fashion Academy logo" />
+          </a>
+
+          <a href="index.html">
+            <img
+              src="images/madelyn_apparel_logo.jpg"
+              alt="Madelyn Apparel logo" />
+          </a>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="academy.html">The Academy</a></li>
+            <li><a href="apparel.html">Madelyn Apparel</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+
+        <p>Develop your skills. Express your creativity. Create your future.</p>
+      </div>
+
+      <p class="copyright">
+        &copy; <span id="currentYear"></span> Madelyn. All rights reserved.
+      </p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top"> &uarr; </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

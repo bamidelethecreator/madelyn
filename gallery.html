@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Explore the Madelyn gallery featuring fashion academy student projects, classwork and bespoke bridal creations." />
+
+    <title>Gallery | Madelyn Fashion Academy & Apparel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="main-navigation" aria-label="Main navigation">
+        <a href="index.html" class="brand-logos" aria-label="Madelyn homepage">
+          <img
+            src="images/madelyn_academy_logo.jpg"
+            alt="Madelyn Fashion Academy logo" />
+          <img
+            src="images/madelyn_apparel_logo.jpg"
+            alt="Madelyn Apparel logo" />
+
+          <span class="brand-name">MADELYN</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="primary-menu">
+          <li><a href="index.html">Home</a></li>
+
+          <li class="has-dropdown">
+            <a href="academy.html">The Academy</a>
+            <ul class="dropdown">
+              <li><a href="academy.html#courses">Our Courses</a></li>
+              <li><a href="academy.html#student-work">Student Projects</a></li>
+              <li><a href="academy.html#academy-enquiry">Enquiries</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="apparel.html">Madelyn Apparel</a>
+            <ul class="dropdown">
+              <li>
+                <a href="apparel.html#bridal-gallery">Bridal Collection</a>
+              </li>
+              <li>
+                <a href="apparel.html#bridal-enquiry">Bridal Enquiries</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="gallery.html" aria-current="page">Gallery</a>
+          </li>
+
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- GALLERY HERO -->
+      <section class="hero-section" aria-labelledby="gallery-hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">The Madelyn Collection</p>
+
+          <h1 id="gallery-hero-title">
+            Creativity Captured,
+            <span>Elegance Remembered.</span>
+          </h1>
+
+          <p>
+            A collection of student projects, creative classwork and bespoke
+            bridal creations that showcase the world of Madelyn.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#student-gallery" class="btn btn-primary">
+              Student Projects
+            </a>
+
+            <a href="#bridal-gallery" class="btn btn-secondary">
+              Bridal Creations
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY INTRODUCTION -->
+      <section
+        class="brand-introduction section-padding"
+        aria-labelledby="gallery-intro-title">
+        <header class="section-heading">
+          <p class="eyebrow">A World of Creativity</p>
+
+          <h2 id="gallery-intro-title">Explore the Madelyn Gallery</h2>
+
+          <p>
+            From the creativity developed in our fashion academy to the elegance
+            of our bridal designs, every image tells a story of learning,
+            imagination and craftsmanship.
+          </p>
+        </header>
+      </section>
+
+      <!-- STUDENT GALLERY -->
+      <section
+        class="student-work-section section-padding"
+        id="student-gallery"
+        aria-labelledby="student-gallery-title">
+        <header class="section-heading">
+          <p class="eyebrow">Madelyn Fashion Academy</p>
+
+          <h2 id="student-gallery-title">Student Projects & Classwork</h2>
+
+          <p>
+            Discover practical exercises, learning milestones and creative
+            projects produced by our students.
+          </p>
+        </header>
+
+        <div class="project-gallery">
+          <figure class="project-item">
+            <img
+              src="images/student-1.jpg"
+              alt="Student fashion design project"
+              loading="lazy" />
+            <figcaption>Fashion Design Project</figcaption>
+          </figure>
+
+          <figure class="project-item">
+            <img
+              src="images/student-2.jpg"
+              alt="Student working on garment construction"
+              loading="lazy" />
+            <figcaption>Garment Construction</figcaption>
+          </figure>
+
+          <figure class="project-item">
+            <img
+              src="images/student-3.jpg"
+              alt="Completed student sewing project"
+              loading="lazy" />
+            <figcaption>Creative Classwork</figcaption>
+          </figure>
+        </div>
+
+        <div class="section-heading" style="margin-top: 35px; margin-bottom: 0">
+          <a href="academy.html" class="text-link">
+            Discover Our Fashion Academy
+          </a>
+        </div>
+      </section>
+
+      <!-- BRIDAL GALLERY -->
+      <section
+        class="bridal-gallery-section section-padding"
+        id="bridal-gallery"
+        aria-labelledby="bridal-gallery-title">
+        <header class="section-heading">
+          <p class="eyebrow">Madelyn Apparel</p>
+
+          <h2 id="bridal-gallery-title">Bridal Creations</h2>
+
+          <p>
+            A showcase of bespoke bridal designs created to celebrate
+            individuality, beauty and elegance.
+          </p>
+        </header>
+
+        <div class="bridal-gallery">
+          <figure>
+            <img
+              src="images/bridal-1.jpg"
+              alt="Bespoke white wedding gown"
+              loading="lazy" />
+            <figcaption>Wedding Gown</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="images/bridal-2.jpg"
+              alt="Traditional bridal fashion creation"
+              loading="lazy" />
+            <figcaption>Traditional Bridal Wear</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="images/bridal-3.jpg"
+              alt="Detailed bridal couture design"
+              loading="lazy" />
+            <figcaption>Bridal Couture</figcaption>
+          </figure>
+        </div>
+
+        <div class="section-heading" style="margin-top: 35px; margin-bottom: 0">
+          <a href="apparel.html" class="text-link"> Explore Madelyn Apparel </a>
+        </div>
+      </section>
+
+      <!-- GALLERY CALL TO ACTION -->
+      <section
+        class="brand-introduction section-padding"
+        aria-labelledby="gallery-cta-title">
+        <header class="section-heading">
+          <p class="eyebrow">Be Part of the Madelyn Story</p>
+
+          <h2 id="gallery-cta-title">Let's Create Something Beautiful</h2>
+
+          <p>
+            Begin your fashion journey with our academy or discuss your bespoke
+            bridal design with Madelyn Apparel.
+          </p>
+
+          <div
+            class="hero-actions"
+            style="justify-content: center; margin-top: 25px">
+            <a href="academy.html#academy-enquiry" class="btn btn-primary">
+              Join the Academy
+            </a>
+
+            <a href="apparel.html#bridal-enquiry" class="btn btn-secondary">
+              Make a Bridal Enquiry
+            </a>
+          </div>
+        </header>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img
+              src="images/madelyn_academy_logo.jpg"
+              alt="Madelyn Fashion Academy logo" />
+          </a>
+
+          <a href="index.html">
+            <img
+              src="images/madelyn_apparel_logo.jpg"
+              alt="Madelyn Apparel logo" />
+          </a>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="academy.html">Fashion Academy</a></li>
+            <li><a href="apparel.html">Madelyn Apparel</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+
+        <p>Every creation tells a story.</p>
+      </div>
+
+      <p class="copyright">
+        &copy; <span id="currentYear"></span> Madelyn. All rights reserved.
+      </p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top"> &uarr; </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
