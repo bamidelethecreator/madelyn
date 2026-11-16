@@ -17,10 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
 
     <!-- Main Stylesheet -->
@@ -65,8 +62,11 @@
             <a href="index.html" aria-current="page">Home</a>
           </li>
 
+          <!-- ACADEMY DROPDOWN -->
           <li class="has-dropdown">
-            <a href="academy.html">The Academy</a>
+            <a href="academy.html" aria-haspopup="true" aria-expanded="false">
+              The Academy
+            </a>
 
             <ul class="dropdown">
               <li>
@@ -74,17 +74,20 @@
               </li>
 
               <li>
-                <a href="academy.html#student-work">Student Projects</a>
+                <a href="academy.html#student-work"> Student Projects </a>
               </li>
 
               <li>
-                <a href="academy.html#academy-enquiry">Enquiries</a>
+                <a href="academy.html#academy-enquiry"> Enquiries </a>
               </li>
             </ul>
           </li>
 
+          <!-- APPAREL DROPDOWN -->
           <li class="has-dropdown">
-            <a href="apparel.html">Madelyn Apparel</a>
+            <a href="apparel.html" aria-haspopup="true" aria-expanded="false">
+              Madelyn Apparel
+            </a>
 
             <ul class="dropdown">
               <li>
@@ -295,16 +298,18 @@
       <div class="footer-content">
         <!-- FOOTER BRAND -->
         <div class="footer-brand">
-          <a href="index.html" aria-label="Madelyn Fashion Academy">
+          <a href="index.html" aria-label="Madelyn Fashion Academy homepage">
             <img
               src="images/madelyn_academy_logo.jpg"
-              alt="Madelyn Fashion Academy logo" />
+              alt="Madelyn Fashion Academy logo"
+              loading="lazy" />
           </a>
 
-          <a href="index.html" aria-label="Madelyn Apparel">
+          <a href="index.html" aria-label="Madelyn Apparel homepage">
             <img
               src="images/madelyn_apparel_logo.jpg"
-              alt="Madelyn Apparel logo" />
+              alt="Madelyn Apparel logo"
+              loading="lazy" />
           </a>
         </div>
 
@@ -343,6 +348,6 @@
     <a href="#" class="back-to-top" aria-label="Back to top"> &uarr; </a>
 
     <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

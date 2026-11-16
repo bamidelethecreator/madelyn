@@ -8,28 +8,35 @@
       name="description"
       content="Explore the Madelyn gallery featuring fashion academy student projects, classwork and bespoke bridal creations." />
 
+    <meta name="theme-color" content="#f7f3ed" />
+
     <title>Gallery | Madelyn Fashion Academy & Apparel</title>
 
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
 
+    <!-- MAIN STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <!-- =====================================
+         HEADER & NAVIGATION
+    ====================================== -->
+
     <header class="site-header">
       <nav class="main-navigation" aria-label="Main navigation">
+        <!-- BRAND IDENTITY -->
         <a href="index.html" class="brand-logos" aria-label="Madelyn homepage">
           <img
             src="images/madelyn_academy_logo.jpg"
             alt="Madelyn Fashion Academy logo" />
+
           <img
             src="images/madelyn_apparel_logo.jpg"
             alt="Madelyn Apparel logo" />
@@ -37,8 +44,10 @@
           <span class="brand-name">MADELYN</span>
         </a>
 
+        <!-- MOBILE MENU BUTTON -->
         <button
           class="menu-toggle"
+          type="button"
           aria-label="Open navigation menu"
           aria-expanded="false"
           aria-controls="primary-menu">
@@ -47,38 +56,64 @@
           <span></span>
         </button>
 
+        <!-- PRIMARY NAVIGATION -->
         <ul class="nav-menu" id="primary-menu">
-          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
 
+          <!-- ACADEMY DROPDOWN -->
           <li class="has-dropdown">
-            <a href="academy.html">The Academy</a>
+            <a href="academy.html" aria-haspopup="true" aria-expanded="false">
+              The Academy
+            </a>
+
             <ul class="dropdown">
-              <li><a href="academy.html#courses">Our Courses</a></li>
-              <li><a href="academy.html#student-work">Student Projects</a></li>
-              <li><a href="academy.html#academy-enquiry">Enquiries</a></li>
+              <li>
+                <a href="academy.html#courses"> Our Courses </a>
+              </li>
+
+              <li>
+                <a href="academy.html#student-work"> Student Projects </a>
+              </li>
+
+              <li>
+                <a href="academy.html#academy-enquiry"> Enquiries </a>
+              </li>
             </ul>
           </li>
 
+          <!-- APPAREL DROPDOWN -->
           <li class="has-dropdown">
-            <a href="apparel.html">Madelyn Apparel</a>
+            <a href="apparel.html" aria-haspopup="true" aria-expanded="false">
+              Madelyn Apparel
+            </a>
+
             <ul class="dropdown">
               <li>
-                <a href="apparel.html#bridal-gallery">Bridal Collection</a>
+                <a href="apparel.html#bridal-gallery"> Bridal Collection </a>
               </li>
+
               <li>
-                <a href="apparel.html#bridal-enquiry">Bridal Enquiries</a>
+                <a href="apparel.html#bridal-enquiry"> Bridal Enquiries </a>
               </li>
             </ul>
           </li>
 
           <li>
-            <a href="gallery.html" aria-current="page">Gallery</a>
+            <a href="gallery.html" aria-current="page"> Gallery </a>
           </li>
 
-          <li><a href="index.html#contact">Contact</a></li>
+          <li>
+            <a href="index.html#contact"> Contact </a>
+          </li>
         </ul>
       </nav>
     </header>
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
 
     <main>
       <!-- GALLERY HERO -->
@@ -125,7 +160,10 @@
         </header>
       </section>
 
-      <!-- STUDENT GALLERY -->
+      <!-- =====================================
+           STUDENT GALLERY
+      ====================================== -->
+
       <section
         class="student-work-section section-padding"
         id="student-gallery"
@@ -145,36 +183,42 @@
           <figure class="project-item">
             <img
               src="images/student-1.jpg"
-              alt="Student fashion design project"
+              alt="Fashion design project created by a Madelyn student"
               loading="lazy" />
+
             <figcaption>Fashion Design Project</figcaption>
           </figure>
 
           <figure class="project-item">
             <img
               src="images/student-2.jpg"
-              alt="Student working on garment construction"
+              alt="Student practising garment construction"
               loading="lazy" />
+
             <figcaption>Garment Construction</figcaption>
           </figure>
 
           <figure class="project-item">
             <img
               src="images/student-3.jpg"
-              alt="Completed student sewing project"
+              alt="Completed sewing project by a Madelyn student"
               loading="lazy" />
+
             <figcaption>Creative Classwork</figcaption>
           </figure>
         </div>
 
-        <div class="section-heading" style="margin-top: 35px; margin-bottom: 0">
+        <div class="section-heading gallery-link">
           <a href="academy.html" class="text-link">
             Discover Our Fashion Academy
           </a>
         </div>
       </section>
 
-      <!-- BRIDAL GALLERY -->
+      <!-- =====================================
+           BRIDAL GALLERY
+      ====================================== -->
+
       <section
         class="bridal-gallery-section section-padding"
         id="bridal-gallery"
@@ -194,8 +238,9 @@
           <figure>
             <img
               src="images/bridal-1.jpg"
-              alt="Bespoke white wedding gown"
+              alt="Bespoke white wedding gown by Madelyn Apparel"
               loading="lazy" />
+
             <figcaption>Wedding Gown</figcaption>
           </figure>
 
@@ -204,24 +249,29 @@
               src="images/bridal-2.jpg"
               alt="Traditional bridal fashion creation"
               loading="lazy" />
+
             <figcaption>Traditional Bridal Wear</figcaption>
           </figure>
 
           <figure>
             <img
               src="images/bridal-3.jpg"
-              alt="Detailed bridal couture design"
+              alt="Detailed bespoke bridal couture design"
               loading="lazy" />
+
             <figcaption>Bridal Couture</figcaption>
           </figure>
         </div>
 
-        <div class="section-heading" style="margin-top: 35px; margin-bottom: 0">
+        <div class="section-heading gallery-link">
           <a href="apparel.html" class="text-link"> Explore Madelyn Apparel </a>
         </div>
       </section>
 
-      <!-- GALLERY CALL TO ACTION -->
+      <!-- =====================================
+           GALLERY CALL TO ACTION
+      ====================================== -->
+
       <section
         class="brand-introduction section-padding"
         aria-labelledby="gallery-cta-title">
@@ -235,9 +285,7 @@
             bridal design with Madelyn Apparel.
           </p>
 
-          <div
-            class="hero-actions"
-            style="justify-content: center; margin-top: 25px">
+          <div class="hero-actions gallery-cta-actions">
             <a href="academy.html#academy-enquiry" class="btn btn-primary">
               Join the Academy
             </a>
@@ -250,41 +298,64 @@
       </section>
     </main>
 
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
     <footer class="site-footer">
       <div class="footer-content">
+        <!-- FOOTER BRAND -->
         <div class="footer-brand">
-          <a href="index.html">
+          <a href="index.html" aria-label="Madelyn Fashion Academy homepage">
             <img
               src="images/madelyn_academy_logo.jpg"
-              alt="Madelyn Fashion Academy logo" />
+              alt="Madelyn Fashion Academy logo"
+              loading="lazy" />
           </a>
 
-          <a href="index.html">
+          <a href="index.html" aria-label="Madelyn Apparel homepage">
             <img
               src="images/madelyn_apparel_logo.jpg"
-              alt="Madelyn Apparel logo" />
+              alt="Madelyn Apparel logo"
+              loading="lazy" />
           </a>
         </div>
 
+        <!-- FOOTER NAVIGATION -->
         <nav aria-label="Footer navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="academy.html">Fashion Academy</a></li>
-            <li><a href="apparel.html">Madelyn Apparel</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+
+            <li>
+              <a href="academy.html">Fashion Academy</a>
+            </li>
+
+            <li>
+              <a href="apparel.html">Madelyn Apparel</a>
+            </li>
+
+            <li>
+              <a href="gallery.html" aria-current="page"> Gallery </a>
+            </li>
           </ul>
         </nav>
 
         <p>Every creation tells a story.</p>
       </div>
 
+      <!-- COPYRIGHT -->
       <p class="copyright">
-        &copy; <span id="currentYear"></span> Madelyn. All rights reserved.
+        &copy; <span id="currentYear"></span>
+        Madelyn. All rights reserved.
       </p>
     </footer>
 
+    <!-- BACK TO TOP -->
     <a href="#" class="back-to-top" aria-label="Back to top"> &uarr; </a>
 
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
   </body>
 </html>

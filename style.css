@@ -1,8 +1,10 @@
 /* =====================================================
    MADELYN FASHION
    SHARED WEBSITE STYLESHEET
+
    Luxury | Editorial | Minimal | Elegant
-   Refined Layout | Champagne Side-Framed Website
+   Champagne Framing | Responsive Layout
+   Refined Typography | Consistent Components
 ===================================================== */
 
 /* =====================================================
@@ -23,29 +25,25 @@
 
   --border: #e5ddd4;
 
-  /* Gold framing */
+  --champagne: #c6a77b;
   --frame-color: #c6a77b;
   --outer-margin-color: #c6a77b;
-  --champagne: #c6a77b;
 
-  /* Typography */
   --heading-font: "Playfair Display", Georgia, serif;
   --body-font: "DM Sans", Arial, sans-serif;
+  --brand-font: "Cormorant Garamond", Georgia, serif;
 
-  /* Layout */
   --container: 1200px;
   --section-space: 100px;
 
-  /* Side frame dimensions */
-  --frame-width: 0.5px;
-  --frame-margin: clamp(5px, 1.5vw, 10px);
+  --frame-width: 1px;
+  --frame-margin: clamp(5px, 1.2vw, 10px);
 
-  /* Image spacing */
   --image-inset: 12px;
 
-  /* Effects */
   --transition: 0.3s ease;
   --shadow: 0 12px 35px rgba(41, 37, 36, 0.08);
+  --shadow-hover: 0 18px 45px rgba(41, 37, 36, 0.13);
 }
 
 /* =====================================================
@@ -66,7 +64,6 @@ html {
   scroll-padding-top: 110px;
   overflow-x: clip;
 
-  /* Independent outer side margins */
   background-color: var(--ivory);
 
   background-image: linear-gradient(
@@ -81,7 +78,6 @@ html {
 
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-attachment: scroll;
 }
 
 body {
@@ -89,10 +85,8 @@ body {
   width: auto;
   min-height: 100vh;
 
-  margin-left: var(--frame-margin);
-  margin-right: var(--frame-margin);
+  margin-inline: var(--frame-margin);
 
-  /* Thin champagne vertical lines */
   border-left: var(--frame-width) solid var(--frame-color);
   border-right: var(--frame-width) solid var(--frame-color);
 
@@ -136,6 +130,10 @@ section {
   position: relative;
 }
 
+main {
+  width: 100%;
+}
+
 .container {
   width: min(90%, var(--container));
   margin-inline: auto;
@@ -147,6 +145,11 @@ section {
 
 .text-center {
   text-align: center;
+}
+
+::selection {
+  color: var(--white);
+  background: var(--wine);
 }
 
 /* =====================================================
@@ -183,7 +186,7 @@ p {
   display: inline-block;
   margin-bottom: 18px;
 
-  color: var(--muted, #77716f);
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -191,14 +194,14 @@ p {
 }
 
 .section-heading {
-  max-width: 750px;
+  width: min(100%, 750px);
   margin: 0 auto 55px;
   text-align: center;
 }
 
 .section-heading h2 {
   margin-bottom: 18px;
-  color: var(--champagne, #c6a77b);
+  color: var(--champagne);
 }
 
 .section-heading p {
@@ -209,7 +212,7 @@ p {
 
 .brand-intro,
 .brand-introduction {
-  max-width: 100%;
+  width: 100%;
   text-align: center;
 }
 
@@ -253,9 +256,15 @@ p {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 1px;
+  text-align: center;
   text-transform: uppercase;
 
-  transition: var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .btn:hover {
@@ -263,6 +272,18 @@ p {
   background: var(--wine-dark);
   border-color: var(--wine-dark);
   transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(87, 32, 44, 0.15);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-outline {
@@ -330,22 +351,22 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 25px;
 }
 
-/* Brand logo container */
+/* Brand logos */
 
 .brand-logos {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 
   flex-shrink: 0;
   text-decoration: none;
 }
 
 .brand-logos img {
-  width: 100px;
+  width: 88px;
   max-height: 65px;
   object-fit: contain;
 }
@@ -353,19 +374,17 @@ p {
 /* MADELYN brand name */
 
 .brand-name {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--brand-font);
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 600;
   letter-spacing: 0.16em;
+
   color: var(--wine);
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
-  transition: color 0.3s ease;
-}
 
-.brand-logos:hover .brand-name {
-  color: var(--champagne);
+  transition: color var(--transition);
 }
 
 .brand-logos:hover .brand-name {
@@ -380,7 +399,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 30px;
+  gap: 25px;
 
   margin-left: auto;
 }
@@ -400,9 +419,9 @@ p {
   color: var(--charcoal);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 
-  transition: var(--transition);
+  transition: color var(--transition);
 }
 
 .nav-menu > li > a:hover,
@@ -430,7 +449,11 @@ p {
   pointer-events: none;
 
   transform: translateY(10px);
-  transition: var(--transition);
+
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
 }
 
 .nav-menu .has-dropdown:hover > .dropdown,
@@ -453,7 +476,9 @@ p {
   color: var(--charcoal);
   font-size: 0.82rem;
 
-  transition: var(--transition);
+  transition:
+    color var(--transition),
+    background var(--transition);
 }
 
 .nav-menu .dropdown a:hover,
@@ -497,6 +522,8 @@ p {
 
 .hero-section {
   position: relative;
+  isolation: isolate;
+
   min-height: 680px;
 
   display: flex;
@@ -504,27 +531,48 @@ p {
   justify-content: center;
 
   overflow: hidden;
-  background: var(--cream);
+
+  /* Elegant fallback where no hero image is supplied */
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(198, 167, 123, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(135deg, var(--wine-dark), #34282a 65%, #211c1d);
 }
+
+/* Dark overlay for hero images */
 
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(rgba(41, 37, 36, 0.58), rgba(41, 37, 36, 0.58));
+  background: linear-gradient(
+    90deg,
+    rgba(41, 37, 36, 0.72),
+    rgba(41, 37, 36, 0.42)
+  );
 
   z-index: 1;
 }
 
+/* Hero image */
+
 .hero-section img.hero-image {
   position: absolute;
   inset: 0;
+  z-index: 0;
 
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
 }
+
+/* Hero content */
 
 .hero-content {
   position: relative;
@@ -544,6 +592,7 @@ p {
 
 .hero-content h1 span {
   display: block;
+  color: var(--champagne);
 }
 
 .hero-content p {
@@ -579,6 +628,8 @@ p {
   gap: 65px;
 }
 
+/* Feature images */
+
 .section-image {
   width: calc(100% - (var(--image-inset) * 2));
   height: 450px;
@@ -602,9 +653,10 @@ p {
   transform: scale(1.04);
 }
 
+/* Feature text */
+
 .section-content {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-inline: 30px;
 }
 
 .section-content h2 {
@@ -619,8 +671,6 @@ p {
 .section-content .btn {
   margin-top: 12px;
 }
-
-/* Academy and Apparel text refinement */
 
 .academy-section .section-content,
 .apparel-section .section-content {
@@ -695,13 +745,16 @@ p {
   background: var(--white);
   border: 1px solid var(--border);
 
-  transition: var(--transition);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .course-card:hover {
   transform: translateY(-6px);
   border-color: var(--champagne);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-hover);
 }
 
 .course-number {
@@ -743,6 +796,7 @@ p {
   position: absolute;
   top: 0;
   left: 0;
+
   color: var(--wine);
 }
 
@@ -762,27 +816,34 @@ p {
   gap: 24px;
 }
 
-.project-item {
+.project-item,
+.bridal-gallery figure {
   min-width: 0;
   overflow: hidden;
+
   background: var(--white);
 }
 
-.project-item img {
+.project-item img,
+.bridal-gallery img {
   width: 100%;
   height: 360px;
+
   object-fit: cover;
 
   transition: transform 0.6s ease;
 }
 
-.project-item:hover img {
+.project-item:hover img,
+.bridal-gallery figure:hover img {
   transform: scale(1.05);
 }
 
 .project-item figcaption,
+.bridal-gallery figcaption,
 .project-caption {
   padding: 20px;
+
   color: var(--charcoal);
   font-size: 0.9rem;
   text-align: center;
@@ -831,6 +892,12 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.bridal-feature-image:hover img {
+  transform: scale(1.04);
 }
 
 .bridal-feature-content h2 {
@@ -851,6 +918,25 @@ p {
   background: var(--wine-dark);
   color: var(--white);
 }
+
+/* Enquiry section headings */
+
+.enquiry-section .section-heading h2,
+.bridal-enquiry-section .section-heading h2 {
+  color: var(--champagne);
+}
+
+.enquiry-section .section-heading > p:not(.eyebrow),
+.bridal-enquiry-section .section-heading > p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.enquiry-section .eyebrow,
+.bridal-enquiry-section .eyebrow {
+  color: var(--champagne);
+}
+
+/* Split enquiry layout */
 
 .enquiry-container {
   display: grid;
@@ -874,18 +960,24 @@ p {
   color: var(--champagne);
 }
 
+/* Form container */
+
 .enquiry-form {
   min-width: 0;
   padding: 40px;
 
   background: var(--ivory);
   color: var(--charcoal);
+  border: 1px solid rgba(198, 167, 123, 0.25);
+  box-shadow: var(--shadow);
 }
 
 .enquiry-form h3 {
   margin-bottom: 25px;
   color: var(--wine);
 }
+
+/* Form grid */
 
 .form-grid {
   display: grid;
@@ -902,6 +994,8 @@ p {
   grid-column: 1 / -1;
 }
 
+/* Labels */
+
 .form-group label {
   display: block;
   margin-bottom: 8px;
@@ -911,6 +1005,8 @@ p {
   font-weight: 600;
   text-align: left;
 }
+
+/* Form fields */
 
 .form-group input,
 .form-group select,
@@ -927,7 +1023,15 @@ p {
   border-radius: 2px;
   outline: none;
 
-  transition: var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9b9490;
+  opacity: 1;
 }
 
 .form-group input:focus,
@@ -942,9 +1046,43 @@ p {
   resize: vertical;
 }
 
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group input[type="date"] {
+  cursor: pointer;
+}
+
+/* Form submission button */
+
 .enquiry-form .btn {
   width: 100%;
   margin-top: 8px;
+}
+
+/* Form status messages - for shared JavaScript */
+
+.form-status {
+  margin-top: 18px;
+  padding: 12px 15px;
+
+  border-radius: 2px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.form-status.success {
+  color: #245c3c;
+  background: #e8f3eb;
+  border: 1px solid #c5dfcc;
+}
+
+.form-status.error {
+  color: #8b2635;
+  background: #f8e9eb;
+  border: 1px solid #e8c7cc;
 }
 
 /* =====================================================
@@ -966,8 +1104,6 @@ p {
   text-align: center;
 }
 
-/* Contact buttons in homepage introduction */
-
 .contact-actions {
   justify-content: center;
   margin-top: 25px;
@@ -979,6 +1115,7 @@ p {
 
 .site-footer {
   padding: 75px 0 25px;
+
   background: #211c1d;
   color: var(--white);
 }
@@ -1001,13 +1138,19 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
+
   min-width: 0;
+}
+
+.footer-brand a {
+  display: inline-block;
 }
 
 .footer-brand img {
   width: 120px;
   max-height: 70px;
   margin-bottom: 20px;
+
   object-fit: contain;
 }
 
@@ -1016,6 +1159,8 @@ p {
   color: rgba(255, 255, 255, 0.65);
   text-align: left;
 }
+
+/* Footer headings */
 
 .footer-column h3 {
   margin-bottom: 20px;
@@ -1028,6 +1173,8 @@ p {
   text-transform: uppercase;
 }
 
+/* Footer links */
+
 .footer-column ul,
 .footer-content nav ul {
   display: grid;
@@ -1038,19 +1185,25 @@ p {
 .footer-content nav a {
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.86rem;
-  transition: var(--transition);
+
+  transition: color var(--transition);
 }
 
 .footer-column a:hover,
-.footer-content nav a:hover {
+.footer-content nav a:hover,
+.footer-content nav a:focus-visible {
   color: var(--champagne);
 }
+
+/* Footer description */
 
 .footer-content > p {
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.86rem;
   text-align: left;
 }
+
+/* Copyright */
 
 .copyright {
   width: min(90%, var(--container));
@@ -1088,6 +1241,8 @@ p {
   border-radius: 50%;
 
   font-size: 1.3rem;
+  line-height: 1;
+
   box-shadow: var(--shadow);
 
   opacity: 0;
@@ -1095,7 +1250,11 @@ p {
   pointer-events: none;
 
   transform: translateY(10px);
-  transition: var(--transition);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition),
+    background var(--transition);
 }
 
 .back-to-top.visible {
@@ -1114,36 +1273,35 @@ p {
    16. TABLET AND COMPACT DESKTOP
 ===================================================== */
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   :root {
-    --section-space: 80px;
+    --section-space: 85px;
     --image-inset: 9px;
   }
 
   .main-navigation {
-    gap: 18px;
+    gap: 15px;
   }
 
   .brand-logos {
-    gap: 10px;
+    gap: 8px;
   }
 
   .brand-logos img {
-    width: 76px;
+    width: 68px;
   }
 
   .brand-name {
-    font-size: 1.35rem;
-    letter-spacing: 0.14em;
-    margin-left: 4px;
+    font-size: 1.55rem;
+    letter-spacing: 0.12em;
   }
 
   .nav-menu {
-    gap: 18px;
+    gap: 15px;
   }
 
   .nav-menu > li > a {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
   }
 
   .academy-section,
@@ -1163,7 +1321,11 @@ p {
   }
 
   .course-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .course-card {
+    padding: 30px 25px;
   }
 
   .enquiry-container {
@@ -1177,16 +1339,17 @@ p {
 
 /* =====================================================
    17. MOBILE NAVIGATION AND TABLET LAYOUT
+   Mobile navigation breakpoint: 900px
 ===================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   :root {
-    --section-space: 70px;
-    --image-inset: 7px;
+    --section-space: 75px;
+    --image-inset: 8px;
   }
 
   html {
-    scroll-padding-top: 85px;
+    scroll-padding-top: 90px;
   }
 
   .container {
@@ -1196,8 +1359,8 @@ p {
   /* Header */
 
   .main-navigation {
-    width: 90%;
-    min-height: 78px;
+    width: 92%;
+    min-height: 82px;
 
     display: flex;
     align-items: center;
@@ -1206,18 +1369,17 @@ p {
   }
 
   .brand-logos {
-    gap: 7px;
+    gap: 8px;
   }
 
   .brand-logos img {
-    width: 58px;
-    max-height: 48px;
+    width: 65px;
+    max-height: 50px;
   }
 
   .brand-name {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     letter-spacing: 0.12em;
-    margin-left: 4px;
   }
 
   /* Hamburger */
@@ -1241,7 +1403,7 @@ p {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Main mobile dropdown */
+  /* Mobile menu */
 
   .nav-menu {
     position: absolute;
@@ -1294,7 +1456,7 @@ p {
     border-bottom: none;
   }
 
-  /* Nested mobile dropdowns */
+  /* Nested dropdowns */
 
   .nav-menu .dropdown {
     position: static;
@@ -1336,19 +1498,19 @@ p {
   /* Hero */
 
   .hero-section {
-    min-height: 560px;
+    min-height: 580px;
   }
 
   .page-hero {
-    min-height: 360px;
+    min-height: 380px;
   }
 
   .hero-content {
-    padding-block: 75px;
+    padding-block: 80px;
   }
 
   .hero-content p {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
   }
 
   /* Main content */
@@ -1362,22 +1524,23 @@ p {
   }
 
   .section-image {
-    height: 350px;
-    min-height: 350px;
+    height: 390px;
+    min-height: 390px;
   }
 
   .section-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    width: min(100%, 650px);
+    margin-inline: auto;
+    padding-inline: 15px;
   }
 
   .bridal-feature-image {
-    height: 400px;
-    min-height: 400px;
+    height: 420px;
+    min-height: 420px;
   }
 
   .course-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-gallery,
@@ -1385,11 +1548,12 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .project-item img {
-    height: 280px;
+  .project-item img,
+  .bridal-gallery img {
+    height: 300px;
   }
 
-  /* Footer layout */
+  /* Footer */
 
   .footer-content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1436,9 +1600,15 @@ p {
     --image-inset: 5px;
   }
 
+  html {
+    scroll-padding-top: 80px;
+  }
+
   .container {
     width: 90%;
   }
+
+  /* Header */
 
   .main-navigation {
     width: 94%;
@@ -1456,9 +1626,8 @@ p {
   }
 
   .brand-name {
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    margin-left: 3px;
+    font-size: 1.05rem;
+    letter-spacing: 0.09em;
   }
 
   .menu-toggle {
@@ -1480,6 +1649,8 @@ p {
     font-size: 0.82rem;
   }
 
+  /* Typography */
+
   h1 {
     font-size: 2.55rem;
   }
@@ -1488,20 +1659,47 @@ p {
     font-size: 2rem;
   }
 
+  .eyebrow {
+    font-size: 0.67rem;
+    letter-spacing: 2.3px;
+  }
+
+  /* Hero */
+
   .hero-section {
     min-height: 520px;
+  }
+
+  .page-hero {
+    min-height: 330px;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding-block: 65px;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
   }
 
   .hero-buttons,
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .hero-buttons .btn,
   .hero-actions .btn {
     width: 100%;
   }
+
+  /* Sections */
 
   .section-heading {
     margin-bottom: 40px;
@@ -1512,19 +1710,33 @@ p {
     min-height: 320px;
   }
 
+  .section-content {
+    padding-inline: 10px;
+  }
+
   .bridal-feature-image {
     height: 350px;
     min-height: 350px;
   }
 
+  /* Cards and galleries */
+
+  .course-grid,
   .project-gallery,
   .bridal-gallery {
     grid-template-columns: 1fr;
   }
 
-  .project-item img {
+  .course-card {
+    padding: 28px 24px;
+  }
+
+  .project-item img,
+  .bridal-gallery img {
     height: 340px;
   }
+
+  /* Forms */
 
   .form-grid {
     grid-template-columns: 1fr;
@@ -1535,7 +1747,15 @@ p {
     padding: 25px 18px;
   }
 
+  .form-group {
+    margin-bottom: 17px;
+  }
+
   /* Footer */
+
+  .site-footer {
+    padding-top: 55px;
+  }
 
   .footer-content {
     grid-template-columns: 1fr;
@@ -1562,9 +1782,12 @@ p {
     margin-top: 8px;
   }
 
+  /* Back to top */
+
   .back-to-top {
     right: 15px;
     bottom: 15px;
+
     width: 42px;
     height: 42px;
   }
